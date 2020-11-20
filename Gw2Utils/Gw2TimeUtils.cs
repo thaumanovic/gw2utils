@@ -40,25 +40,9 @@ namespace Gw2Utils
         /// </summary>
         public static TimeSpan ConvertToTyrianTime(DateTime realTime, int gameDaysInRealDay = GameDaysInRealDay)
         {
-            TimeSpan currentDayTimespan;
-            double currentCycleSeconds;
-
-            // Retrieves a timespan that represents the time from 00:00 of the given realTime to the current time
-            // of the given realTime
-            currentDayTimespan = realTime - realTime.Date;
-
-            /**
-             * A single Tyrian day consists of 7200 real-time seconds, so we divide the current real-time seconds of
-             * the day by 7200 and then return the remainder - this gives us the current total seconds that have passed
-             * in Tyria for the current Tyrian day/cycle.
-             */
-            currentCycleSeconds = currentDayTimespan.TotalSeconds % (SecondsInADay / GameDaysInRealDay);
-
-            /**
-             * For every second that passes in real time, 12 pass in Tyrian time, so we simply need to multiply
-             * the current cycle seconds by 12 to convert them from a 2 hour cycle to a 24 hour cycle which will represent
-             * the time passed for the current day in Tyria.
-             */
+            var currentDayTimespan = realTime - realTime.Date;
+            var currentCycleSeconds = currentDayTimespan.TotalSeconds % (SecondsInADay / GameDaysInRealDay);
+            
             return TimeSpan.FromSeconds(currentCycleSeconds * GameDaysInRealDay);
         }
 
