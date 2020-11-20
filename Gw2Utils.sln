@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gw2Utils", "Gw2Utils\Gw2Utils.csproj", "{A7A1F88D-5496-4596-B1DA-B7EE57EA910A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gw2Utils.Tests", "Gw2Utils.Tests\Gw2Utils.Tests.csproj", "{73F97287-7A8D-4E0F-8E52-1533D326CC9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{A7A1F88D-5496-4596-B1DA-B7EE57EA910A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7A1F88D-5496-4596-B1DA-B7EE57EA910A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7A1F88D-5496-4596-B1DA-B7EE57EA910A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73F97287-7A8D-4E0F-8E52-1533D326CC9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73F97287-7A8D-4E0F-8E52-1533D326CC9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73F97287-7A8D-4E0F-8E52-1533D326CC9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73F97287-7A8D-4E0F-8E52-1533D326CC9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

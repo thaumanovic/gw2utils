@@ -1,6 +1,7 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d6e82dac_002Dfa23_002D40dc_002D8a3e_002Da8599a029c39/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::73F97287-7A8D-4E0F-8E52-1533D326CC9F::.NETCoreApp,Version=v5.0::Gw2Utils.Tests.Gw2TimeUtilsTests.Test1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::73F97287-7A8D-4E0F-8E52-1533D326CC9F::.NETCoreApp,Version=v5.0::Gw2Utils.Tests.Gw2TimeUtilsTests.TestConvertsToTyrianTimeCorrectly&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::73F97287-7A8D-4E0F-8E52-1533D326CC9F::.NETCoreApp,Version=v5.0::Gw2Utils.Tests.Gw2TimeUtilsTests.TestConvertsFromTimeSpanToTimeOfDayCorrectly&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
