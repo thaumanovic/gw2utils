@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Gw2Utils
 {
@@ -15,20 +14,20 @@ namespace Gw2Utils
     public static class Gw2TimeUtils
     {
         /// <summary>
-        /// The number of seconds in a day.
+        /// The number of seconds in a real-world day.
         /// </summary>
         private const int SecondsInADay = 86400;
 
         /// <summary>
-        /// The number of game days that occur with a real-time day.
+        /// The number of in-game days that occur with a real-world day.
         /// </summary>
         private const int GameDaysInRealDay = 12;
         
         /// <summary>
         /// Used to convert the current time of day (in Tyria) expressed as a second to a game day stage.
         /// </summary>
-        private static readonly Dictionary<Range, TimeOfDay> TyrianSecondsToDayStateConversions = new Dictionary<Range, TimeOfDay>() {
-            [0..17999] = TimeOfDay.Night,
+        private static readonly Dictionary<Range, TimeOfDay> TyrianSecondsToDayStateConversions = new() {
+            [..17999] = TimeOfDay.Night,
             [18000..21599] = TimeOfDay.Dawn,
             [21600..71999] = TimeOfDay.Day,
             [72000..75599] = TimeOfDay.Dusk,
@@ -41,7 +40,7 @@ namespace Gw2Utils
         public static TimeSpan ConvertToTyrianTime(DateTime realTime, int gameDaysInRealDay = GameDaysInRealDay)
         {
             var currentDayTimespan = realTime - realTime.Date;
-            var currentCycleSeconds = currentDayTimespan.TotalSeconds % (SecondsInADay / GameDaysInRealDay);
+            var currentCycleSeconds = currentDayTimespan.TotalSeconds % (SecondsInADay / gameDaysInRealDay);
             
             return TimeSpan.FromSeconds(currentCycleSeconds * GameDaysInRealDay);
         }
@@ -62,12 +61,9 @@ namespace Gw2Utils
             if (tyrianTime.TotalSeconds >= SecondsInADay)
                 throw new ArgumentException("Must be a TimeSpan of less than 1 day.", nameof(tyrianTime));
 
-            foreach (var dayStateConversion in TyrianSecondsToDayStateConversions) {
-
-                var currentStageCheck = dayStateConversion.Key;
-                
+            foreach (var (currentStageCheck, value) in TyrianSecondsToDayStateConversions) {
                 if (tyrianTime.TotalSeconds >= currentStageCheck.Start.Value && tyrianTime.TotalSeconds <= currentStageCheck.End.Value) {
-                    return dayStateConversion.Value;
+                    return value;
                 }
             }
 
